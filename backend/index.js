@@ -7,7 +7,7 @@ const port = 3500;
 const DB_URL = 'mongodb+srv://OlegSmac:olegandilie100S@cluster0.wn6bpni.mongodb.net/coordinates?retryWrites=true&w=majority';
 
 const app = express();
-
+    
 app.use(express.json());
 app.use(cors({
     origin: '*'

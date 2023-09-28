@@ -8,8 +8,11 @@ const schemaMap = new mongoose.Schema({
     },
     coordinates: [
         {
-            coord1: {type: Number, required: true},
-            coord2: {type: Number, required: true}
+            position: {
+                lat: {type: Number, required: true},
+                lng: {type: Number, required: true}
+            },
+            number: {type: Number, required: true}
         }
     ],
     name: String,

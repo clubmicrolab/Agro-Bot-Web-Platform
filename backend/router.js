@@ -17,7 +17,7 @@ router.get('/user/:id', PostController.getUser);
 router.put('/user', PostController.updateUser);
 router.delete('/user/:id', PostController.deleteUser);
 
-//sensors
+//sensors (is this a path to device?)
 router.post('/sensors', PostController.createSensor);
 router.get('/sensors', PostController.getAllSensors);
 router.get('/sensors/:id', PostController.getSensor);
