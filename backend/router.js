@@ -10,25 +10,29 @@ router.get('/maps/:id', PostController.getMap);
 router.put('/maps', PostController.updateMap);
 router.delete('/maps/:id', PostController.deleteMap);
 
-//user
-router.post('/user', PostController.createUser);
-router.get('/user', PostController.getAllUsers);
-router.get('/user/:id', PostController.getUser);
-router.put('/user', PostController.updateUser);
-router.delete('/user/:id', PostController.deleteUser);
+//actor
+router.post('/actor', PostController.createActor);
+router.get('/actor', PostController.getAllActors);
+// router.get('/user', async (req, res) => {
+//     try {
+//         const users = await PostController.getAllUsers(req, res);
+//         console.log(users);
+//         res.status(200).json(users);
+//     }  catch (err) {
+//         //console.error('Ошибка:', err);
+//         res.status(500).json({err: 'Произошла ошибка'});
+//     }
+// });
+router.get('/actor/:id', PostController.getActor);
+router.put('/actor', PostController.updateActor);
+router.delete('/actor/:id', PostController.deleteActor);
 
-//sensors (is this a path to device?)
+//sensors
 router.post('/sensors', PostController.createSensor);
 router.get('/sensors', PostController.getAllSensors);
 router.get('/sensors/:id', PostController.getSensor);
 router.put('/sensors', PostController.updateSensor);
 router.delete('/sensors/:id', PostController.deleteSensor);
-
-//bot
-router.post('/bot', PostController.createBot);
-router.get('/bot/:id', PostController.getBot);
-router.put('/bot', PostController.updateBot);
-router.delete('/bot/:id', PostController.deleteBot);
 
 //crops
 router.post('/crops', PostController.createCrop);
@@ -43,5 +47,11 @@ router.get('/missions', PostController.getAllMissions);
 router.get('/missions/:id', PostController.getMission);
 router.put('/missions', PostController.updateMission);
 router.delete('/missions/:id', PostController.deleteMission);
+
+//telemetry
+router.post('/telemetry', PostController.createTelemetry);
+router.get('/telemetry', PostController.getAllTelemetries);
+router.get('/telemetry/:id', PostController.getTelemetry);
+router.delete('/telemetry/:id', PostController.deleteTelemetry);
 
 export default router;

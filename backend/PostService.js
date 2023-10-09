@@ -1,214 +1,182 @@
 import schemaMap from "./schemaMap.js";
-import schemaBot from "./schemaAgroBot.js";
 import schemaCrop from "./schemaCrop.js";
-import schemaUser from "./schemaUser.js";
+import schemaActor from "./schemaActor.js";
 import schemaSensor from "./schemaSensor.js";
 import schemaMission from "./schemaMission.js";
+import schemaTelemetry from "./schemaTelemetry.js";
 
 class PostService {
     //MAPS
     async createMap(map) {
-        const createdMap = await schemaMap.create(map);
-        return createdMap;
+        return schemaMap.create(map);
     }
 
     async getAllMaps() {
-        const maps = await schemaMap.find();
-        return maps;
+        return schemaMap.find();
     }
 
     async getMap(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const map = await schemaMap.findById(id);
-        return map;
+        return schemaMap.findById(id);
     }
 
     async updateMap(map) {
         if (!map._id) {
             throw new Error('Id is not right.');
         }
-        const updatedMap = await schemaMap.findByIdAndUpdate(map._id, map, {new: true});
-        return updatedMap;
+        return schemaMap.findByIdAndUpdate(map._id, map, {new: true});
     }
 
     async deleteMap(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const map = await schemaMap.findByIdAndDelete(id);
-        return map;
-    }
-
-    //BOT
-    async createBot(post) {
-        const createdBot = await schemaBot.create(post);
-        return createdBot;
-    }
-
-    async getBot(id) {
-        if (!id) {
-            throw new Error('Id is not right.');
-        }
-        const bot = await schemaBot.findById(id);
-        return bot;
-    }
-
-    async updateBot(post) {
-        if (!post._id) {
-            throw new Error('Id is not right.');
-        }
-        const updatedBot = await schemaBot.findByIdAndUpdate(post._id, post, {new: true});
-        return updatedBot;
-    }
-
-    async deleteBot(id) {
-        if (!id) {
-            throw new Error('Id is not right.');
-        }
-        const bot = await schemaBot.findByIdAndDelete(id);
-        return bot;
+        return schemaMap.findByIdAndDelete(id);
     }
 
     //CROPS
     async createCrop(crop) {
-        const createdCrop = await schemaCrop.create(crop);
-        return createdCrop;
+        return schemaCrop.create(crop);
     }
 
     async getAllCrops() {
-        const crops = await schemaCrop.find();
-        return crops;
+        return schemaCrop.find();
     }
 
     async getCrop(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const crop = await schemaCrop.findById(id);
-        return crop;
+        return schemaCrop.findById(id);
     }
 
     async updateCrop(crop) {
         if (!crop._id) {
             throw new Error('Id is not right.');
         }
-        const updatedCrop = await schemaCrop.findByIdAndUpdate(crop._id, crop, {new: true});
-        return updatedCrop;
+        return schemaCrop.findByIdAndUpdate(crop._id, crop, {new: true});
     }
 
     async deleteCrop(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const crop = await schemaCrop.findByIdAndDelete(id);
-        return crop;
+        return schemaCrop.findByIdAndDelete(id);
     }
 
-    //USERS
-    async createUser(user) {
-        const createdUser = await schemaUser.create(user);
-        return createdUser;
+    //ACTORS
+    async createActor(actor) {
+        return schemaActor.create(actor);
     }
 
-    async getAllUsers() {
-        const users = await schemaUser.find();
-        return users;
+    async getAllActors() {
+        return schemaActor.find();
     }
 
-    async getUser(id) {
+    async getActor(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const user = await schemaUser.findById(id);
-        return user;
+        return schemaActor.findById(id);
     }
 
-    async updateUser(user) {
+    async updateActor(user) {
         if (!user._id) {
             throw new Error('Id is not right.');
         }
-        const updatedUser = await schemaUser.findByIdAndUpdate(user._id, user, {new: true});
-        return updatedUser;
+        return schemaActor.findByIdAndUpdate(user._id, user, {new: true});
     }
 
-    async deleteUser(id) {
+    async deleteActor(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const user = await schemaUser.findByIdAndDelete(id);
-        return user;
+        return schemaActor.findByIdAndDelete(id);
     }
 
     //SENSORS
-    async createSensor(crop) {
-        const createdSensor = await schemaSensor.create(crop);
-        return createdSensor;
+    async createSensor(sensor) {
+        return schemaSensor.create(sensor);
     }
 
     async getAllSensors() {
-        const sensors = await schemaSensor.find();
-        return sensors;
+        return schemaSensor.find();
     }
 
     async getSensor(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const sensor = await schemaSensor.findById(id);
-        return sensor;
+        return schemaSensor.findById(id);
     }
 
     async updateSensor(sensor) {
         if (!sensor._id) {
             throw new Error('Id is not right.');
         }
-        const updatedSensor = await schemaSensor.findByIdAndUpdate(sensor._id, sensor, {new: true});
-        return updatedSensor;
+        return schemaSensor.findByIdAndUpdate(sensor._id, sensor, {new: true});
     }
 
     async deleteSensor(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const sensor = await schemaSensor.findByIdAndDelete(id);
-        return sensor;
+        return schemaSensor.findByIdAndDelete(id);
     }
 
     //MISSIONS
     async createMission(mission) {
-        const createdMission = await schemaMission.create(mission);
-        return createdMission;
+        return schemaMission.create(mission);
     }
 
     async getAllMissions() {
-        const missions = await schemaMission.find();
-        return missions;
+        return schemaMission.find();
     }
 
     async getMission(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const mission = await schemaMission.findById(id);
-        return mission;
+        return schemaMission.findById(id);
     }
 
     async updateMission(mission) {
         if (!mission._id) {
             throw new Error('Id is not right.');
         }
-        const updatedMission = await schemaMission.findByIdAndUpdate(mission._id, mission, {new: true});
-        return updatedMission;
+        return schemaMission.findByIdAndUpdate(mission._id, mission, {new: true});
     }
 
     async deleteMission(id) {
         if (!id) {
             throw new Error('Id is not right.');
         }
-        const mission = await schemaMission.findByIdAndDelete(id);
-        return mission;
+        return schemaMission.findByIdAndDelete(id);
+    }
+
+    //TELEMETRY
+    async createTelemetry(telemetry) {
+        return schemaTelemetry.create(telemetry);
+    }
+
+    async getAllTelemetries() {
+        return schemaTelemetry.find();
+    }
+
+    async getTelemetry(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaTelemetry.findById(id);
+    }
+
+    async deleteTelemetry(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaTelemetry.findByIdAndDelete(id);
     }
 }
 

@@ -47,43 +47,6 @@ class PostController {
         }
     }
 
-    //BOT
-    async createBot(req, res) {
-        try {
-            const bot = await PostService.createBot(req.body);
-            res.json(bot);
-        } catch (err) {
-            res.status(500).json(err.message);
-        }
-    }
-
-    async getBot(req, res) {
-        try {
-            const bot = await PostService.getBot(req.params.id);
-            return res.json(bot);
-        } catch (err) {
-            res.status(500).json(err.message);
-        }
-    }
-
-    async updateBot(req, res) {
-        try {
-            const updatedBot = await PostService.updateBot(req.body);
-            return res.json(updatedBot);
-        } catch (err) {
-            res.status(500).json(err.message);
-        }
-    }
-
-    async deleteBot(req, res) {
-        try {
-            const bot = await PostService.deleteBot(req.params.id);
-            return res.json(bot);
-        } catch (err) {
-            res.status(500).json(err.message);
-        }
-    }
-
     //CROPS
     async createCrop(req, res) {
         try {
@@ -130,47 +93,47 @@ class PostController {
         }
     }
 
-    //USERS
-    async createUser(req, res) {
+    //ACTORS
+    async createActor(req, res) {
         try {
-            const user = await PostService.createUser(req.body);
-            res.json(user);
+            const actor = await PostService.createActor(req.body);
+            res.json(actor);
         } catch (err) {
             res.status(500).json(err.message);
         }
     }
 
-    async getAllUsers(req, res) {
+    async getAllActors(req, res) {
         try {
-            const users = await PostService.getAllUsers();
-            return res.json(users);
+            const actors = await PostService.getAllActors();
+            return res.json(actors);
         } catch (err) {
             res.status(500).json(err.message);
         }
     }
 
-    async getUser(req, res) {
+    async getActor(req, res) {
         try {
-            const user = await PostService.getUser(req.params.id);
-            return res.json(user);
+            const actor = await PostService.getActor(req.params.id);
+            return res.json(actor);
         } catch (err) {
             res.status(500).json(err.message);
         }
     }
 
-    async updateUser(req, res) {
+    async updateActor(req, res) {
         try {
-            const updatedUser = await PostService.updateUser(req.body);
-            return res.json(updatedUser);
+            const updatedActor = await PostService.updateActor(req.body);
+            return res.json(updatedActor);
         } catch (err) {
             res.status(500).json(err.message);
         }
     }
 
-    async deleteUser(req, res) {
+    async deleteActor(req, res) {
         try {
-            const user = await PostService.deleteUser(req.params.id);
-            return res.json(user);
+            const actor = await PostService.deleteActor(req.params.id);
+            return res.json(actor);
         } catch (err) {
             res.status(500).json(err.message);
         }
@@ -263,6 +226,43 @@ class PostController {
         try {
             const mission = await PostService.deleteMission(req.params.id);
             return res.json(mission);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    //TELEMETRY
+    async createTelemetry(req, res) {
+        try {
+            const telemetry = await PostService.createTelemetry(req.body);
+            res.json(telemetry);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getAllTelemetries(req, res) {
+        try {
+            const telemetries = await PostService.getAllTelemetries();
+            return res.json(telemetries);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getTelemetry(req, res) {
+        try {
+            const telemetry = await PostService.getTelemetry(req.params.id);
+            return res.json(telemetry);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async deleteTelemetry(req, res) {
+        try {
+            const telemetry = await PostService.deleteTelemetry(req.params.id);
+            return res.json(telemetry);
         } catch (err) {
             res.status(500).json(err.message);
         }
