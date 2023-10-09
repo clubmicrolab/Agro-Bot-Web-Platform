@@ -17,8 +17,7 @@ const schemaMap = new mongoose.Schema({
     ],
     name: String,
     date: {type: Date, required: true},
-    current: {type: Boolean, required: true},
-    edited: {type: Boolean, required: true}
+    current: {type: Boolean, required: true}
 });
 
 export default mongoose.model('schemaMap', schemaMap, 'maps');
