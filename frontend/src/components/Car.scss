@@ -1,0 +1,41 @@
+.Car {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+
+.Car__imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Car__img {
+    width: 100%;
+}
+
+.Car__container {
+    position: relative;
+    width: 220px;
+    height: fit-content;
+}
+
+.Car__wheelLeft {
+    position: absolute;
+    top: 29px;
+    left: 53px;
+    width: 14px;
+    transition: all .3s ease;
+}
+
+.Car__wheelRight {
+    position: absolute;
+    top: 29px;
+    right: 57px;
+    width: 14px;
+    transition: all .3s ease;
+}

@@ -1,0 +1,47 @@
+.Position {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    height: 100%;
+
+    & button {
+        height: 100%;
+        padding: 0 20px;
+        font-weight: bold;
+        margin-left: 10px;
+        border: none;
+        outline: none;
+        background-color: rgb(188 209 218);
+        transition: .2s ease;
+        border-radius: 2px;
+        letter-spacing: .8px;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(180, 151, 151);
+        }
+    }
+
+
+}
+
+.Position-container {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    font-weight: bold;
+    height: 100%;
+}
+
+
+@media screen and (max-width: 1450px) {
+    .Position-container {
+        font-size: 11px;
+
+        & button {
+            font-size: 11px;
+        }
+    }
+}

@@ -1,0 +1,115 @@
+.Map-container {
+  padding: 10px;
+  width: 100%;
+  min-height: 600px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+
+// .leaflet-container {
+//   position: relative;
+
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     background-color: transparent;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 9999;
+//   }
+// }
+
+//  .editTrue .leaflet-container::before {
+//   background-color: rgb(255, 0, 0, .8);
+//  }
+
+
+
+
+
+.Map-containerTools {
+  padding: 0 10px;
+  background-color: rgb(162 231 231);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 6.5%;
+}
+
+
+.DeleteMarker {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  column-gap: 20px;
+  & span {
+    font-weight: bold;
+  }
+}
+
+.DeleteButton {
+  font-size: 14px;
+  font-weight: bold;
+  transition: .2s ease;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+  background-color: rgb(188 209 218);
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(180, 151, 151);
+  }
+}
+
+.AddMap {
+  font-size: 14px;
+  font-weight: bold;
+  transition: .2s ease;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border: none;
+  height: 100%;
+  outline: none;
+  background-color: rgb(188 209 218);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1450px) {
+
+  .Map-container {
+    height: 100vh;
+  }
+
+  .AddMap {
+    font-size: 11px;
+  }
+
+  .DeleteMarker span{
+    font-size: 11px;
+  }
+
+  .DeleteButton {
+    font-size: 11px;
+  }
+}
+
+.editContainer {
+  position: absolute;
+  width: 99%;
+  height: 900px;
+  left: 0;
+  top: 200px;
+  height: 20%;
+  background-color: red;
+  z-index: 999;
+}

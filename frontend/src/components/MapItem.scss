@@ -1,0 +1,36 @@
+.MapItem {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(188, 186, 186);
+}
+
+.MapItem__name {
+    display: flex;
+    align-items: center;
+
+    & input {
+    width: 80px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: default;
+    }
+
+    & svg {
+       width: 12px;
+       cursor: pointer;
+    }
+}
+
+.editButton {
+    padding: 7px 10px;
+    transition: .3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: bisque;
+    }
+}
