@@ -4,6 +4,11 @@ import schemaActor from "./schemaActor.js";
 import schemaSensor from "./schemaSensor.js";
 import schemaMission from "./schemaMission.js";
 import schemaTelemetry from "./schemaTelemetry.js";
+import schemaUser from "./schemaUser.js";
+import schemaDevice from "./schemaDevice.js";
+import schemaActiveJob from "./schemaActiveJob.js";
+import schemaJobsHistory from "./schemaJobsHistory.js";
+import schemaDeviceAndSensor from "./schemaDeviceAndSensor.js";
 
 class PostService {
     //MAPS
@@ -34,6 +39,160 @@ class PostService {
             throw new Error('Id is not right.');
         }
         return schemaMap.findByIdAndDelete(id);
+    }
+
+    //USER
+    async createUser(user) {
+        return schemaUser.create(user);
+    }
+
+    async getAllUsers() {
+        return schemaUser.find();
+    }
+
+    async getUser(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaUser.findById(id);
+    }
+
+    async updateUser(user) {
+        if (!user._id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaUser.findByIdAndUpdate(user._id, user, {new: true});
+    }
+
+    async deleteUser(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaUser.findByIdAndDelete(id);
+    }
+
+    //DEVICE
+    async createDevice(device) {
+        return schemaDevice.create(device);
+    }
+
+    async getAllDevices() {
+        return schemaDevice.find();
+    }
+
+    async getDevice(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaDevice.findById(id);
+    }
+
+    async updateDevice(device) {
+        if (!device._id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaDevice.findByIdAndUpdate(device._id, device, {new: true});
+    }
+
+    async deleteDevice(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaDevice.findByIdAndDelete(id);
+    }
+
+    //DEVICE & SENSOR
+    async createPair(device) {
+        return schemaDeviceAndSensor.create(device);
+    }
+
+    async getAllPairs() {
+        return schemaDeviceAndSensor.find();
+    }
+
+    async getAllSensorsByDeviceId(id) {
+        return schemaDeviceAndSensor.findById(id);
+    }
+
+    async getPair(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaDeviceAndSensor.findById(id);
+    }
+
+    async updatePair(pair) {
+        if (!pair._id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaDeviceAndSensor.findByIdAndUpdate(pair._id, pair, {new: true});
+    }
+
+    async deletePair(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaDeviceAndSensor.findByIdAndDelete(id);
+    }
+
+    //ACTIVE JOB
+    async createActiveJob(job) {
+        return schemaActiveJob.create(job);
+    }
+
+    async getAllActiveJobs() {
+        return schemaActiveJob.find();
+    }
+
+    async getActiveJob(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaActiveJob.findById(id);
+    }
+
+    async updateActiveJob(job) {
+        if (!job._id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaActiveJob.findByIdAndUpdate(job._id, job, {new: true});
+    }
+
+    async deleteActiveJob(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaActiveJob.findByIdAndDelete(id);
+    }
+
+    //JOSB HISTORY
+    async createJob(job) {
+        return schemaJobsHistory.create(job);
+    }
+
+    async getAllJobs() {
+        return schemaJobsHistory.find();
+    }
+
+    async getJob(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaJobsHistory.findById(id);
+    }
+
+    async updateJob(job) {
+        if (!job._id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaJobsHistory.findByIdAndUpdate(job._id, job, {new: true});
+    }
+
+    async deleteJob(id) {
+        if (!id) {
+            throw new Error('Id is not right.');
+        }
+        return schemaJobsHistory.findByIdAndDelete(id);
     }
 
     //CROPS

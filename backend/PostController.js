@@ -47,6 +47,245 @@ class PostController {
         }
     }
 
+    //USER
+    async createUser(req, res) {
+        try {
+            const user = await PostService.createUser(req.body);
+            res.json(user);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getAllUsers(req, res) {
+        try {
+            const users = await PostService.getAllUsers();
+            return res.json(users);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getUser(req, res) {
+        try {
+            const user = await PostService.getUser(req.params.id);
+            return res.json(user);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async updateUser(req, res) {
+        try {
+            const updatedUser = await PostService.updateUser(req.body);
+            return res.json(updatedUser);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async deleteUser(req, res) {
+        try {
+            const user = await PostService.deleteUser(req.params.id);
+            return res.json(user);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    //DEVICE
+    async createDevice(req, res) {
+        try {
+            const device = await PostService.createDevice(req.body);
+            res.json(device);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getAllDevices(req, res) {
+        try {
+            const devices = await PostService.getAllDevices();
+            return res.json(devices);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getDevice(req, res) {
+        try {
+            const device = await PostService.getDevice(req.params.id);
+            return res.json(device);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async updateDevice(req, res) {
+        try {
+            const updatedDevice = await PostService.updateDevice(req.body);
+            return res.json(updatedDevice);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async deleteDevice(req, res) {
+        try {
+            const device = await PostService.deleteDevice(req.params.id);
+            return res.json(device);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    //DEVICE & SENSOR
+    async createPair(req, res) {
+        try {
+            const pair = await PostService.createPair(req.body);
+            res.json(pair);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getAllPairs(req, res) {
+        try {
+            const pairs = await PostService.getAllPairs();
+            return res.json(pairs);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getAllSensorsByDeviceId(req, res) {
+        try {
+            const sensors = await PostService.getAllSensorsByDeviceId(req.params.id);
+            return res.json(sensors);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getPair(req, res) {
+        try {
+            const pair = await PostService.getPair(req.params.id);
+            return res.json(pair);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async updatePair(req, res) {
+        try {
+            const pair = await PostService.updatePair(req.body);
+            return res.json(pair);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async deletePair(req, res) {
+        try {
+            const pair = await PostService.deletePair(req.params.id);
+            return res.json(pair);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    //ACTIVE JOB
+    async createActiveJob(req, res) {
+        try {
+            const job = await PostService.createActiveJob(req.body);
+            res.json(job);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getAllActiveJobs(req, res) {
+        try {
+            const jobs = await PostService.getAllActiveJobs();
+            return res.json(jobs);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getActiveJob(req, res) {
+        try {
+            const job = await PostService.getActiveJob(req.params.id);
+            return res.json(job);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async updateActiveJob(req, res) {
+        try {
+            const job = await PostService.updateActiveJob(req.body);
+            return res.json(job);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async deleteActiveJob(req, res) {
+        try {
+            const job = await PostService.deleteActiveJob(req.params.id);
+            return res.json(job);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    //JOBS HISTORY
+    async createJob(req, res) {
+        try {
+            const job = await PostService.createJob(req.body);
+            res.json(job);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getAllJobs(req, res) {
+        try {
+            const jobs = await PostService.getAllJobs();
+            return res.json(jobs);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async getJob(req, res) {
+        try {
+            const job = await PostService.getJob(req.params.id);
+            return res.json(job);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async updateJob(req, res) {
+        try {
+            const job = await PostService.updateJob(req.body);
+            return res.json(job);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
+    async deleteJob(req, res) {
+        try {
+            const job = await PostService.deleteJob(req.params.id);
+            return res.json(job);
+        } catch (err) {
+            res.status(500).json(err.message);
+        }
+    }
+
     //CROPS
     async createCrop(req, res) {
         try {
